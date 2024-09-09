@@ -1,21 +1,27 @@
+@use "sass:color";
 @use "variables";
+@use 'mixins/text';
 
 .top-picks { 
   position: relative;
   padding: 50px; 
+  background-color: color.adjust(variables.$primary, $lightness: 5%);
 
   &__header {
     border-left: solid 5px variables.$primary;
     padding-left: 20px;
+  
   }
 
   &__title {
     margin: 0;
-    font-family: arial;
+    font-family: arial;  
+    color: color.adjust(variables.$primary, $lightness: 100%);
   }
   
   &__desc {
     opacity: 0.7;
+    @include text.small-cap;
   }
   
   &__wrapper {
